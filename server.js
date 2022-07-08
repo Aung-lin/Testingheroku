@@ -8,19 +8,19 @@ app.use(cors());
 let notes = [
   {
     id: 1,
-    content: "HTML is easy",
+    content: "Paing Humme Lin KMKL",
     date: "2022-05-30T17:30:31.098Z",
     important: true,
   },
   {
     id: 2,
-    content: "Browser can execute only Javascript",
+    content: "Paing Humme Lin Phin Kan Lite",
     date: "2022-05-30T18:39:34.091Z",
     important: false,
   },
   {
     id: 3,
-    content: "GET and POST are the most important methods of HTTP protocol",
+    content: "Yoon Lay youk kyar Aung Lin",
     date: "2022-05-30T19:20:14.298Z",
     important: true,
   },
