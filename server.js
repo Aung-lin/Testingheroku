@@ -1,5 +1,7 @@
+const http = require("http");
 const express = require("express");
 const app = express();
+const path = require("path");
 const cors = require("cors");
 app.use(cors());
 
@@ -35,6 +37,7 @@ const requestlogger = (request, response, next) => {
 
 app.use(express.json());
 app.use(requestlogger);
+app.use(express.static("build"));
 
 app.get("/", (req, res) => {
   res.send("<h1>Hello<h1/>");
@@ -87,4 +90,10 @@ const unknownEndpoint = (request, response) => {
 app.use(unknownEndpoint);
 
 const port = process.env.PORT || 3001;
-app.listen(port, () => console.log("Server is running"));
+// if (process.env.NODE_ENV === "production") {
+//   app.use(express.static("build"));
+//   app.get("*", (req, res) => {
+//     req.sendFile(path.resolve(__dirname, "bulid", "index.html"));
+//   });
+// }
+app.listen(port, () => console.log("Server is running", port));
